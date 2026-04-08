@@ -21,7 +21,7 @@
             background-color: #f8fafc;
             color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 140px; /* Extra space for mobile floating button */
+            padding-bottom: 160px; /* Space for the big mobile button */
         }
 
         header {
@@ -48,7 +48,7 @@
         .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; }
 
         h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); margin: 0; font-weight: 800; letter-spacing: -1.5px; }
-        .tagline { font-size: 1.1rem; opacity: 0.95; margin-top: 8px; font-weight: 400; padding: 0 10px; }
+        .tagline { font-size: 1.1rem; opacity: 0.95; margin-top: 8px; font-weight: 400; }
 
         .container {
             max-width: 1100px;
@@ -60,7 +60,7 @@
             background: var(--glass-white);
             padding: 30px 20px;
             margin-bottom: 25px;
-            border-radius: 20px;
+            border-radius: 24px;
             box-shadow: 0 10px 25px rgba(30, 64, 175, 0.05);
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
@@ -74,7 +74,9 @@
             gap: 12px;
         }
 
-        /* Responsive Grids */
+        .highlight-text { color: var(--brand-blue); font-weight: 600; }
+
+        /* Grids */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -84,13 +86,13 @@
         .card {
             background: #f1f5f9;
             padding: 20px;
-            border-radius: 18px;
-            border-left: 4px solid var(--accent-blue);
+            border-radius: 20px;
+            border-left: 5px solid var(--accent-blue);
         }
 
-        .card i { font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 12px; }
+        .card i { font-size: 1.8rem; color: var(--accent-blue); margin-bottom: 15px; display: block; }
 
-        /* Process Steps Mobile Optimization */
+        /* Process Flow */
         .process-flow {
             display: flex;
             flex-direction: column;
@@ -98,11 +100,12 @@
             text-align: center;
         }
 
-        .process-icon { font-size: 2rem; color: var(--brand-blue); margin-bottom: 8px; }
+        .process-item { flex: 1; }
+        .process-icon { font-size: 2.5rem; color: var(--brand-blue); margin-bottom: 10px; }
 
-        /* Step Boxes */
-        .anydesk-box { border: 2px dashed var(--accent-blue); }
-        .step { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; }
+        /* AnyDesk Box */
+        .anydesk-box { border: 2px dashed var(--accent-blue); background: #f0f7ff; }
+        .step { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; text-align: left; }
         .step-num {
             background: var(--brand-blue);
             color: white;
@@ -113,11 +116,10 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 0.9rem;
             font-weight: bold;
         }
 
-        /* Pricing Section */
+        /* Pricing */
         .price-grid {
             display: flex;
             flex-direction: column;
@@ -126,7 +128,7 @@
 
         .price-card {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
             border: 1px solid #e2e8f0;
             text-align: center;
@@ -134,12 +136,12 @@
 
         .price-card.popular {
             border: 2px solid var(--brand-blue);
-            background: #fdfdfd;
+            box-shadow: 0 15px 30px rgba(30, 64, 175, 0.1);
         }
 
-        .amount { font-size: 2.5rem; font-weight: 800; color: var(--brand-blue); }
+        .amount { font-size: 2.8rem; font-weight: 800; color: var(--brand-blue); margin: 10px 0; }
 
-        /* Mobile-First WhatsApp Button */
+        /* Floating WhatsApp Button */
         .whatsapp-cta {
             position: fixed;
             bottom: 20px;
@@ -147,30 +149,26 @@
             transform: translateX(-50%);
             background: var(--whatsapp-green);
             color: white;
-            padding: 15px 25px;
-            border-radius: 35px;
+            padding: 20px;
+            border-radius: 40px;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
             display: flex;
             flex-direction: column;
             align-items: center;
             z-index: 1000;
-            width: 85%;
-            max-width: 400px;
+            width: 90%;
+            max-width: 500px;
             text-align: center;
         }
 
-        .whatsapp-cta b { font-size: 0.9rem; margin-bottom: 2px; }
-        .whatsapp-cta span { font-size: 0.8rem; opacity: 0.9; }
-
-        /* Tablet and Desktop adjustments */
+        /* Desktop adjustments */
         @media (min-width: 768px) {
             header { padding: 80px 20px 120px; }
             h2 { font-size: 2rem; }
             .process-flow { flex-direction: row; }
             .price-grid { flex-direction: row; }
             .price-card.popular { transform: scale(1.05); }
-            section { padding: 50px 40px; }
         }
     </style>
 </head>
@@ -181,66 +179,113 @@
         <img src="logo.jpeg" alt="QuickFix Logo">
     </div>
     <h1>QuickFix</h1>
-    <p class="tagline"><i class="fas fa-bolt"></i> Digital Insurance Against Downtime</p>
+    <p class="tagline"><i class="fas fa-bolt"></i> Your Digital Insurance Against Downtime </p>
 </header>
 
 <div class="container">
     
     <section>
-        <h2><i class="fas fa-triangle-exclamation"></i> The Problem</h2>
-        <p>Did you know? <span class="highlight-text">1 Hour of Downtime</span> can cost small businesses hundreds of RM. Every minute your system is down, you are losing money and customers.</p>
+        <h2><i class="fas fa-triangle-exclamation"></i> The Problem </h2>
+        <p>Did you know? <span class="highlight-text">1 Hour of Downtime</span> can cost small businesses hundreds of RM. Every minute your system is down, you are losing money, customers, and credibility.</p>
     </section>
 
     <section>
-        <h2><i class="fas fa-shield-virus"></i> Services</h2>
+        <h2><i class="fas fa-shield-virus"></i> Prevention & Services </h2>
         <div class="info-grid">
             <div class="card">
                 <i class="fas fa-heart-pulse"></i>
-                <h3>Health Checks</h3>
-                <p>Weekly automated scans for viruses and disk health to catch problems early.</p>
+                <h3>Proactive Health Checks </h3>
+                <p>Weekly automated scans for viruses, malware, and disk health to catch problems before they happen.</p>
             </div>
             <div class="card">
                 <i class="fas fa-truck-fast"></i>
-                <h3>Hardware Repair</h3>
-                <p>Managed by <b>Dalle Bin Davy</b>. Courier pickup & 24-hour turnaround.</p>
+                <h3>Express Hardware Repair </h3>
+                <p>Managed by <b>Dalle Bin Davy</b>. Courier pickup & return with a 24-hour turnaround for local areas.</p>
             </div>
             <div class="card">
                 <i class="fas fa-user-tie"></i>
-                <h3>Software Concierge</h3>
-                <p>Managed by <b>Izzuddin Mohammad</b>. Expertise in complex software installs.</p>
+                <h3>Software Concierge </h3>
+                <p>Managed by <b>Muhammad Izzuddin Bin Mohammad</b>. Expertise in complex software installs and license compatibility.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-earth-americas"></i> Availability </h2>
+        <div class="info-grid">
+            <div class="card">
+                <i class="fas fa-signal"></i>
+                <h3>Remote Support</h3>
+                <p><b>Nationwide:</b> 100% online coverage anywhere with internet. Instant connection and same-day resolution.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-location-dot"></i>
+                <h3>On-Site Service</h3>
+                <p><b>Local Area:</b> Kota Kinabalu & Sandakan. Physical diagnostics, hardware repairs, and enterprise visits.</p>
             </div>
         </div>
     </section>
 
     <section class="anydesk-box">
-        <h2><i class="fas fa-laptop-code"></i> Setup AnyDesk</h2>
-        <div class="step"><div class="step-num">1</div><div><b>Download:</b> Visit anydesk.com and click download.</div></div>
-        <div class="step"><div class="step-num">2</div><div><b>Launch:</b> Run the file (no installation needed).</div></div>
-        <div class="step"><div class="step-num">3</div><div><b>Connect:</b> Share your 9-digit ID with us.</div></div>
+        <h2><i class="fas fa-laptop-code"></i> Setup AnyDesk for Instant Help </h2>
+        <div class="step"><div class="step-num">1</div><div><b>Download:</b> Visit anydesk.com and click the free download button.</div></div>
+        <div class="step"><div class="step-num">2</div><div><b>Launch:</b> Run the file. There is no need to install anything!</div></div>
+        <div class="step"><div class="step-num">3</div><div><b>ID:</b> Look for the 9-digit "Address" on the main screen.</div></div>
+        <div class="step"><div class="step-num">4</div><div><b>Connect:</b> Share that ID and click "Accept" when we arrive.</div></div>
     </section>
 
     <section>
-        <h2><i class="fas fa-tags"></i> Pricing</h2>
+        <h2><i class="fas fa-rotate"></i> Our Process </h2>
+        <div class="process-flow">
+            <div class="process-item">
+                <div class="process-icon"><i class="fas fa-comment-dots"></i></div>
+                <p><b>Step 1</b><br>Contact us via Chat</p>
+            </div>
+            <div class="process-item">
+                <div class="process-icon"><i class="fas fa-stethoscope"></i></div>
+                <p><b>Step 2</b><br>We Diagnose (30 min avg)</p>
+            </div>
+            <div class="process-item">
+                <div class="process-icon"><i class="fas fa-circle-check"></i></div>
+                <p><b>Step 3</b><br>Solved with Warranty</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-tags"></i> Professional Plans </h2>
         <div class="price-grid">
             <div class="price-card">
-                <h3>On-Demand</h3>
+                <h3>On-Demand </h3>
                 <div class="amount">RM50</div>
-                <p>One-time remote fix</p>
+                <p>Per Session</p>
+                <p><i class="fas fa-check"></i> One-time remote fix<br><i class="fas fa-check"></i> 3-day warranty </p>
             </div>
             <div class="price-card popular">
                 <div class="highlight-text" style="font-size: 0.7rem;">RECOMMENDED</div>
                 <h3>Pro Monthly</h3>
                 <div class="amount">RM150</div>
-                <p>Unlimited support</p>
+                <p>Per Month</p>
+                <p><i class="fas fa-check"></i> Unlimited remote support <br><i class="fas fa-check"></i> Weekly optimization </p>
             </div>
+            <div class="price-card">
+                <h3>Enterprise</h3>
+                <div class="amount">RM450</div>
+                <p>Full Service</p>
+                <p><i class="fas fa-check"></i> Priority 1-hour response<br><i class="fas fa-check"></i> On-site visits included </p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:30px;">
+            <p><b><i class="fas fa-shield-check"></i> No Fix, No Fee Guarantee</b></p>
+            <p><small>Avg Response: Under 5 Mins | 5-Star Rated Support </small></p>
         </div>
     </section>
 
 </div>
 
 <a href="https://wa.me/60134700122" class="whatsapp-cta" target="_blank">
-    <i class="fab fa-whatsapp" style="font-size: 24px; margin-bottom: 5px;"></i>
-    <b>Need Immediate Help?</b>
+    <i class="fab fa-whatsapp" style="font-size: 30px; margin-bottom: 8px;"></i>
+    <b>If you have any issues, contact us now</b>
     <span>Chat Now on WhatsApp</span>
 </a>
 
